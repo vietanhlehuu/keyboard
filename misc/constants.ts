@@ -12,7 +12,7 @@ const slideX: Variants = {
   },
 };
 
-const scale: Variants = {
+const zoomIn: Variants = {
   initial: {
     scale: 10,
   },
@@ -21,6 +21,21 @@ const scale: Variants = {
   },
   exit: {
     scale: 0,
+  },
+};
+
+const zoomOut: Variants = {
+  initial: {
+    scale: 0,
+    opacity: 0,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+  },
+  exit: {
+    scale: 10,
+    opacity: 0,
   },
 };
 
@@ -47,4 +62,54 @@ const hop: Variants = {
   },
 };
 
-export const animations = [slideX, scale, hop] as const;
+const slideY: Variants = {
+  initial: {
+    y: "-100vh",
+  },
+  animate: {
+    y: 0,
+  },
+  exit: {
+    y: "100vh",
+  },
+};
+
+const obliqueToBottomRight: Variants = {
+  initial: {
+    x: "-100vw",
+    y: "-100vh",
+  },
+  animate: {
+    x: 0,
+    y: 0,
+  },
+  exit: {
+    x: "100vw",
+    y: "100vh",
+  },
+};
+
+const obliqueToBottomLeft: Variants = {
+  initial: {
+    x: "100vw",
+    y: "-100vh",
+  },
+  animate: {
+    x: 0,
+    y: 0,
+  },
+  exit: {
+    x: "-100vw",
+    y: "100vh",
+  },
+};
+
+export const animations = [
+  slideX,
+  zoomIn,
+  hop,
+  slideY,
+  obliqueToBottomRight,
+  obliqueToBottomLeft,
+  zoomOut,
+] as const;

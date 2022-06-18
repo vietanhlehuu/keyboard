@@ -79,7 +79,7 @@ const KeyPractice: React.FC = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="absolute m-auto text-[200px] uppercase"
+          className="font-serif absolute m-auto text-[200px] uppercase"
         >
           {char}
         </motion.h1>
